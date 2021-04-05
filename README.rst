@@ -38,7 +38,7 @@ Replace 'branch-name' with the name of the branch you want to pull.
 
 .. code-block:: sh
 
-    pip install git+ssh://git@github.com:ahwspl/nla.git@branch-name
+    pip install git+ssh://git@github.com:pharmeasy/nla.git@branch-name
 
 
 Usage
