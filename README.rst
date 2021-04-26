@@ -24,7 +24,7 @@ NLA, Natural Language Augmentor, is the ultimate real and fast way to augment
 textual data for use in any model training. It has all the means to create natural
 and random textual errors.
 
-The *homophones* module replaces any word with its homophones.
+The *homophones* module returns augmented homophones of the given word.
 The *keyaug* and *randaug* modules introduce lightning-fast and parallelized streams
 of organised (keyboard sensitive) and random errors. The *edge n-gram* and *word boundary*
 modules introduce n-gram deletions and word boundary errors respectively.
