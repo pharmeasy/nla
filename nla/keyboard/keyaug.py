@@ -6,7 +6,7 @@ from functools import partial
 from nla.parallelize import *
 
 
-path = "/Users/pharmeasy/git/dataset/augmentation/nla/keyboard.pkl"
+path = "./keyboard.pkl"
 nnkey = pickle.load(open(path, "rb"))
 
 
