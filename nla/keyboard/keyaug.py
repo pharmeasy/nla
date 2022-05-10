@@ -4,9 +4,10 @@ from random import randrange
 import re
 from functools import partial
 from nla.parallelize import *
+from pathlib import Path
 
-
-path = "./keyboard.pkl"
+path2script = str(Path(__file__).resolve())
+path = path2script.rsplit("/", 1)[0] + "/keyboard.pkl"
 nnkey = pickle.load(open(path, "rb"))
 
 
