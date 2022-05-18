@@ -15,26 +15,23 @@ def __edge_n_gram__(query, count, degree=4, **kwargs):
     :type degree: int
     :return:
     """
-    main = []
-
     # minimum length of a word after augmentation
     threshold = 3
 
     # remove ~'degree' number of characters from every word in the sentence
     y = [
-        [
+        {
             w[: (-1 * i)] if (len(w) > i) & (len(w[: (-1 * i)]) >= threshold) else w
             for i in range(1, degree + 1)
-        ]
+        }
         for w in query.split()
     ]
 
     # add the augmented sentence along with the identifiers
     new = [(" ".join(a), query) + tuple(kwargs.values()) for a in product(*y)]
     new = sample(new, count) if count < len(new) else new
-
-    main += new
-    return list(set(main))
+    
+    return new
 
 
 def edge_n_gram(queries, count, degree, parallel=True, **kwargs):
