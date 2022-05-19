@@ -146,12 +146,21 @@ def rand_sent_aug(
         return run_parallel(sentences, function)
 
     else:
-        return [
-            __rand_sent_aug__(
+#         return [
+#             __rand_sent_aug__(
+#                 sentence, degree, count, method=method, position=position, **kwargs
+#             )
+#             for sentence in sentences
+#         ]
+    
+        output = []
+        
+        for sentence in sentences:
+            output.extend(__rand_sent_aug__(
                 sentence, degree, count, method=method, position=position, **kwargs
-            )
-            for sentence in sentences
-        ]
+            ))
+            
+        return output
 
 
 # run_parallel wrapper on __keyboard_sent_aug__
@@ -188,12 +197,21 @@ def keyboard_sent_aug(
         return run_parallel(sentences, function)
 
     else:
-        return [
-            __keyboard_sent_aug__(
+#         return [
+#             __keyboard_sent_aug__(
+#                 sentence, degree, count, method=method, position=position, **kwargs
+#             )
+#             for sentence in sentences
+#         ]
+
+        output = []
+        
+        for sentence in sentences:
+            output.extend(__keyboard_sent_aug__(
                 sentence, degree, count, method=method, position=position, **kwargs
-            )
-            for sentence in sentences
-        ]
+            ))
+            
+        return output
 
 
 if __name__ == "__main__":
