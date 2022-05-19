@@ -58,10 +58,17 @@ def edge_n_gram(queries, count, degree, parallel=True, **kwargs):
         return run_parallel(queries, function)
 
     else:
-        return [
-            __edge_n_gram__(word, degree=degree, count=count, **kwargs)
-            for word in queries
-        ]
+#         return [
+#             __edge_n_gram__(word, degree=degree, count=count, **kwargs)
+#             for word in queries
+#         ]
+
+        output = []
+        
+        for word in queries:
+            output.extend(__edge_n_gram__(word, degree=degree, count=count, **kwargs))
+            
+        return output
 
 
 if __name__ == "__main__":
