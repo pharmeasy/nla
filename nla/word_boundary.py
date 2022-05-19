@@ -120,10 +120,16 @@ def word_boundary(queries, count, degree, parallel=True, **kwargs):
         return run_parallel(queries, function)
 
     else:
-        return [
-            __word_boundary__(word, degree=degree, count=count, **kwargs)
-            for word in queries
-        ]
+#         return [
+#             __word_boundary__(word, degree=degree, count=count, **kwargs)
+#             for word in queries
+#         ]
+        output = []
+        
+        for word in queries:
+            output.extend(__word_boundary__(word, degree=degree, count=count, **kwargs))
+            
+        return output
 
 
 if __name__ == "__main__":
